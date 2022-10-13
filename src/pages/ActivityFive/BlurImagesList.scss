@@ -1,0 +1,14 @@
+.blur-images-list {
+	width: 100%;
+	margin-top: 50px;
+	padding-top: 100px;
+	height: calc(100% - 50px);
+	overflow-y: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 500px);
+	grid-auto-rows: minmax(min-content, max-content);
+	justify-items: center;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	row-gap: 50px;
+}

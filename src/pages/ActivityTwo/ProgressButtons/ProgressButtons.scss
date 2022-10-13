@@ -1,0 +1,32 @@
+$button-background-color: #f5cb5c;
+$button-background-color--hover: #333533;
+$button-color--hover: #e8eddf;
+$button-background-color__disabled: #e8eddf;
+
+.progress-buttons {
+	width: 420px;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+
+	& > button {
+		cursor: pointer;
+		font-size: 20px;
+		border-radius: 0.25em;
+		height: 3em;
+		width: 10em;
+		background-color: $button-background-color;
+		border: 0;
+
+		&:not(.disabled):hover {
+			color: $button-color--hover;
+			background: $button-background-color--hover;
+		}
+
+		&.disabled {
+			background-color: $button-background-color__disabled;
+			border: 1px solid gray;
+			cursor: not-allowed;
+		}
+	}
+}

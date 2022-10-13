@@ -1,0 +1,29 @@
+$main-background-color: #e8eddf;
+
+.tilting-page {
+	padding-top: 50px;
+	height: 100vh;
+	width: 100%;
+	background-color: $main-background-color;
+	transition: 1s ease-in-out;
+	transform-origin: 250px 200px;
+	display: grid;
+	overflow-y: auto;
+
+	& > main {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		place-items: center;
+		overflow-y: scroll;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1em;
+		align-items: flex-start;
+		padding: 2.5em 20em 5em;
+		box-sizing: border-box;
+	}
+
+	&.active {
+		transform: rotate(-20deg);
+	}
+}

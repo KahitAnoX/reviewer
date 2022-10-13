@@ -1,0 +1,33 @@
+.cards {
+	width: 500px;
+	height: 250px;
+	background-color: rgb(255, 255, 0);
+
+	position: relative;
+	z-index: 2;
+
+	// transform-style: preserve-3d;
+
+	// &::before {
+	// 	content: '';
+	// 	width: 200%;
+	// 	height: 200%;
+	// 	background-color: red;
+	// 	position: absolute;
+	// 	z-index: 2;
+	// 	display: block;
+	// }
+
+	&::after {
+		content: '';
+		display: block;
+		width: 200%;
+		height: 200%;
+		background-color: rgba(0, 128, 0, 0.515);
+
+		position: absolute;
+		z-index: 1;
+
+		// transform: translateZ(-1px);
+	}
+}

@@ -1,0 +1,22 @@
+.loading-bar {
+	height: 10px;
+	background-color: gray;
+	border-radius: 5px;
+
+	.inner-loading {
+		height: 100%;
+		width: 0;
+		background-color: white;
+		border-radius: 5px;
+	}
+}
+
+.animate {
+	animation: loading-animation linear forwards;
+}
+
+@keyframes loading-animation {
+	100% {
+		width: 100%;
+	}
+}

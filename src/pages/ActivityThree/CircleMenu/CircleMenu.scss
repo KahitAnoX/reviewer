@@ -1,0 +1,56 @@
+$circle-size: 200px;
+$circle-background-color: #f5cb5c;
+$rotate-angle: 45deg;
+$initial-angle: 45deg;
+$icon-margin: 30px;
+$icon-size: 20px;
+
+* {
+	user-select: none;
+}
+
+.circle-menu {
+	z-index: 100;
+	position: absolute;
+	top: calc(0px - ($circle-size / 2) + 50px);
+	left: calc(0px - ($circle-size / 2));
+	width: $circle-size;
+	height: $circle-size;
+	background-color: $circle-background-color;
+	border-radius: 50%;
+	transition: 1s ease-in-out;
+	cursor: pointer;
+	transform: rotate($initial-angle);
+
+	& > div {
+		width: $icon-size;
+		height: $icon-size;
+		transition: 1s ease-in-out;
+		transform: rotate(-$initial-angle);
+		display: grid;
+		place-items: center;
+		position: absolute;
+
+		svg {
+			width: 100%;
+			height: auto;
+		}
+
+		&:nth-of-type(1) {
+			bottom: $icon-margin;
+			left: calc(($circle-size / 2) - ($icon-margin / 2));
+		}
+
+		&:nth-of-type(2) {
+			right: $icon-margin;
+			top: calc(($circle-size / 2) - ($icon-margin / 2));
+		}
+	}
+
+	&.active {
+		transform: rotate(-$rotate-angle);
+		& > div {
+			transform: rotate($rotate-angle);
+		}
+	}
+}

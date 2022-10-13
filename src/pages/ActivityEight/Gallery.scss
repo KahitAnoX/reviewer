@@ -1,0 +1,6 @@
+.gallery {
+	& > img {
+		aspect-ratio: 1600 / 909;
+		width: 500px;
+	}
+}

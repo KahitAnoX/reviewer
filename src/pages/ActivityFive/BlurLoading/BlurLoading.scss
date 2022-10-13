@@ -1,0 +1,21 @@
+.blur-loading {
+	font-family: 'Roboto', sans-serif;
+	height: auto;
+	width: 500px;
+	position: relative;
+	font-size: 20px;
+
+	& > img {
+		display: block;
+		width: 100%;
+	}
+
+	& > span {
+		color: white;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

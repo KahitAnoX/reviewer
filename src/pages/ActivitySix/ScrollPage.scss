@@ -1,0 +1,35 @@
+$main-background-color: #4a5859;
+$item-background-color--initial: #f4b860;
+$item-background-color--active: #c83e4d;
+$box-dimension--width: 2em;
+$box-dimension--height: 2em;
+
+.scroll-page {
+	box-sizing: border-box;
+	height: calc(100% - 50px);
+	margin-top: 50px;
+	padding-top: 50px;
+	width: 100%;
+	overflow: auto;
+	background-color: $main-background-color;
+
+	& > div {
+		font-size: 50px;
+		margin: 0 auto 0.5em;
+		width: $box-dimension--width;
+		height: $box-dimension--height;
+		background-color: $item-background-color--initial;
+		transition: 1s ease-in-out;
+		transform: translateX(500px);
+		display: grid;
+		place-items: center;
+		border: 5px solid #df901b;
+		box-sizing: border-box;
+	}
+}
+
+.giant {
+	background-color: $item-background-color--active;
+	transform: translateX(-500px) !important;
+	border-radius: 50%;
+}

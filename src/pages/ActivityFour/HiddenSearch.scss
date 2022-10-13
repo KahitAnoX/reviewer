@@ -1,0 +1,43 @@
+.hidden-search {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	width: auto;
+	height: 2.5em;
+	border-radius: 0.5em;
+	border: 0.1em solid #333533;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	overflow: hidden;
+	will-change: auto;
+
+	& > input {
+		all: unset;
+		display: block;
+		width: 10em;
+		cursor: text;
+		padding-left: 0.5em;
+		transition: 1s ease-in-out;
+
+		& ~ div {
+			width: 2.5em;
+			height: 100%;
+			display: grid;
+			place-items: center;
+
+			& > span {
+				font-size: 30px;
+				color: #f5cb5c;
+				font-weight: 400;
+			}
+		}
+	}
+
+	&.disabled {
+		& > input {
+			width: 0;
+			padding: 0;
+		}
+	}
+}

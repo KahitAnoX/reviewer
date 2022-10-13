@@ -1,0 +1,75 @@
+.blog-carousel {
+	width: 800px;
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+
+	& > .image-group {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+
+			// @for $i from 1 through 6 {
+			// 	&:nth-child(#{$i}) {
+			// 		top: 40px * $i;
+			// 		left: 40px * $i;
+			// 	}
+			// }
+		}
+	}
+
+	& > .loading-group {
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		z-index: 10;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	& > .button-group {
+		width: 100%;
+		padding: 0 20px;
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		z-index: 20;
+		top: calc(50% - (50px / 2));
+		box-sizing: border-box;
+		height: 50px;
+
+		& > div {
+			cursor: pointer;
+
+			& > svg {
+				fill: white;
+			}
+		}
+	}
+}
+
+.animate-forward {
+	animation: forward-swipe-image-animation linear;
+}
+
+.animate-backward {
+	animation: backward-swipe-image-animation linear;
+}
+
+@keyframes forward-swipe-image-animation {
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes backward-swipe-image-animation {
+	100% {
+		transform: translateX(100%);
+	}
+}

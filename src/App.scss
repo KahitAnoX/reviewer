@@ -1,0 +1,13 @@
+$app-background-color: #e8eddf;
+
+.app {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	position: relative;
+	width: 100%;
+	background-color: $app-background-color;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+}

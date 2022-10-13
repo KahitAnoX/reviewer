@@ -1,0 +1,85 @@
+$initial-card-height: 500px;
+$initial-card-width: 75px;
+$full-card-width: calc($initial-card-height * 1.67);
+$card-margin: 20px;
+$fancy-border-radius-1: 30% 70% 70% 30% / 30% 30% 70% 70%;
+$fancy-border-radius-2: 47% 53% 50% 50% / 53% 30% 70% 47%;
+$fancy-border-radius-3: 58% 42% 31% 69% / 47% 50% 50% 53%;
+
+.container {
+	display: inline-flex;
+	width: auto;
+	box-sizing: border-box;
+
+	& > div {
+		width: $initial-card-width;
+		height: $initial-card-height;
+		border-radius: 20px;
+		transition: 1s ease-in-out;
+		cursor: pointer;
+		overflow: hidden;
+
+		& > img {
+			height: $initial-card-height;
+			width: auto;
+		}
+
+		&:not(:last-of-type) {
+			margin-right: $card-margin;
+		}
+
+		&.active-tab-animation {
+			width: $full-card-width;
+		}
+
+		&.view-tab-animation {
+			height: $initial-card-height;
+			width: $initial-card-height;
+			animation: fancy-border-animation 10s infinite ease-in-out;
+		}
+	}
+}
+
+// @keyframes fancy-border-animation {
+// 	20% {
+// 		border-radius: 62% 38% 44% 56% / 51% 50% 50% 49%;
+// 	}
+// 	30% {
+// 		border-radius: 36% 64% 45% 55% / 55% 45% 55% 45%;
+// 	}
+// 	40% {
+// 		border-radius: 36% 64% 59% 41% / 64% 59% 41% 36%;
+// 	}
+// 	50% {
+// 		border-radius: 41% 59% 56% 44% / 38% 35% 65% 62%;
+// 	}
+// 	60% {
+// 		border-radius: 41% 59% 44% 56% / 38% 59% 41% 62%;
+// 	}
+// 	70% {
+// 		border-radius: 62% 38% 44% 56% / 51% 50% 50% 49%;
+// 	}
+// 	80% {
+// 		border-radius: 41% 59% 56% 44% / 38% 35% 65% 62%;
+// 	}
+// 	90% {
+// 		border-radius: 36% 64% 59% 41% / 64% 59% 41% 36%;
+// 	}
+// 	0%,
+// 	100% {
+// 		border-radius: 36% 64% 45% 55% / 55% 45% 55% 45%;
+// 	}
+// }
+
+@keyframes fancy-border-animation {
+	33% {
+		border-radius: $fancy-border-radius-1;
+	}
+	66% {
+		border-radius: $fancy-border-radius-2;
+	}
+	0%,
+	100% {
+		border-radius: $fancy-border-radius-3;
+	}
+}

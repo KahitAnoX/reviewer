@@ -1,0 +1,80 @@
+$circle-width: 50px;
+$circle-height: 50px;
+$progress-color: #f5cb5c;
+$default-color: #333533;
+$progress-line-height: 5px;
+
+.progress-indicator {
+	width: 1000px;
+	height: 60px;
+	position: relative;
+	margin: 100px auto;
+
+	* {
+		width: 100%;
+		height: 100%;
+	}
+
+	& > div {
+		&:last-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+
+			& > div {
+				&.circle {
+					height: $circle-height;
+					width: $circle-width;
+					border-radius: 50%;
+					background: white;
+					border: 2px solid $default-color;
+					margin: 3px;
+					display: grid;
+					place-items: center;
+					font-size: 25px;
+				}
+			}
+
+			@for $i from 1 through 4 {
+				&.circles-container-#{$i} {
+					& > div {
+						transition-delay: 0.75s;
+					}
+					@for $j from 1 through $i {
+						& > div:nth-child(#{$j}) {
+							border: $progress-line-height solid $progress-color;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& > .line-container {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& > .line {
+			width: calc(100% - $circle-width);
+			height: $progress-line-height;
+			background-color: $default-color;
+
+			& > div {
+				width: 0px;
+				background-color: $progress-color;
+
+				@for $i from 1 through 4 {
+					transition: 1s ease-in-out;
+					$x: $i - 1;
+					&.progress-line-#{$i} {
+						width: calc(($x * 100%) / 3);
+					}
+				}
+			}
+		}
+	}
+}

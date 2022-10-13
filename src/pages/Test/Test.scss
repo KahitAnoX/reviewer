@@ -1,0 +1,77 @@
+.test {
+	width: 500px;
+	height: 500px;
+	// background: url('../../assets/WLOP/WLOP1.jpg');
+	position: relative;
+	background-color: blue;
+	display: grid;
+	place-items: center;
+
+	& > div:first-of-type {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: yellow;
+	}
+
+	& > div:last-of-type {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: blue;
+	}
+
+	& > p {
+		animation: zoomInZoomOut 1s infinite ease-in-out;
+	}
+}
+
+.flex-trainer {
+	width: 80%;
+	height: 250px;
+	outline: 1px solid red;
+	display: flex;
+	// justify-content: space-between;
+
+	& > * {
+		outline: 1px solid blue;
+		width: 150px;
+		flex-grow: 1;
+		flex-shrink: 1;
+		// flex-shrink: 1;
+		// word-break: break-all;
+		// hyphens: auto;
+		// width: calc((100% / 4) - 10px);
+
+		&:nth-child(3) {
+			background-color: yellow;
+			flex-grow: 2;
+			flex-shrink: 2;
+		}
+	}
+}
+
+@keyframes zoomInZoomOut {
+	0%,
+	100% {
+		scale: 1;
+	}
+	50% {
+		scale: 2;
+	}
+}
+
+.scrollable-div {
+	outline: 1px solid red;
+	width: 200px;
+	height: 200px;
+	overflow-y: scroll;
+
+	& > div:last-child {
+		background-color: yellow;
+	}
+}
